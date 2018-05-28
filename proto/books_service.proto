@@ -1,0 +1,47 @@
+syntax="proto3";
+
+service BookService {
+
+    rpc ListBooks(Empty) returns (ListBookResponse) {}
+    rpc GetBook(GetBookRequest) returns (BookResponse) {}
+    rpc CreateBook(CreateBookRequest) returns (BookResponse) {}
+    rpc EditBook(EditBookRequest) returns (BookResponse) {}
+    rpc DestroyBook(DestroyBookRequest) returns (BookResponse) {}
+
+}
+
+message Empty {}
+
+message GetBookRequest {
+    int32 id = 1;
+}
+
+message ListBookResponse {
+    repeated Book books = 1;
+}
+
+message CreateBookRequest {
+    Book book = 1;
+}
+
+message EditBookRequest {
+    int32 id = 1;
+    Book book = 2;
+}
+
+message DestroyBookRequest {
+    int32 id = 1;
+}
+
+message BookResponse {
+    Book book = 1;
+}
+
+message Book {
+    int32 id = 1;
+    string name = 2;
+    int32 year = 3;
+    double price = 4;
+    string genre = 5;
+    string author = 6;
+}

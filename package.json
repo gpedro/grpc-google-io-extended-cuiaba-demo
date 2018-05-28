@@ -1,0 +1,16 @@
+{
+  "name": "io-grpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "grpc": "^1.11.3"
+  },
+  "scripts": {
+    "start": "node server/node/index",
+    "client:node": "node client/node/index",
+    "client:python": "python client/python/main.py"
+  },
+  "author": "",
+  "license": "ISC"
+}
